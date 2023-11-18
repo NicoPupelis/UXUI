@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Blog</title>
+    <link rel="stylesheet" href="Estilos.css">
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1>Nicolas Pupelis </h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="Tpfinal.html">Home</a></li>
+                <li><a href="donde_estudio.html">Donde estudio</a></li>
+                <li><a href="mas_de_mi.html">Más de mí</a></li>
+            </ul>
+        </nav>
+
+        <div class="clear"></div>
+
+        <section id="contenido">
+            <article class="article">
+                <h2>Les presento mi blog</h2>
+                <p>La idea de crear este blog es compartir o tratar de mejorarme a mí mismo con habilidades dadas por el profesor Alberto Ledesma... Y que no se note que soy de C.A.R.P.</p>
+            </article>
+
+            <article class="article">
+                <h2>Que espero de esta carrera</h2>
+                <p>"Lo que yo espero de esta carrera es que se me abran puertas laborales a futuro"</p>
+            </article>
+
+            <article class="article">
+                <h2>Y para finalizar...</h2>
+                <p>Espero recibirme así compartir mis logros con mis amigos, familia y/o profesores de esta linda universidad que se llama UADER.</p>
+            </article>
+        </section>
+
+        <aside>
+            <h1>¿Qué buscas?</h1>
+            <form onsubmit="return validarBusqueda()">
+                <input type="text" name="q" placeholder="Escribe aquí..." />
+                <input type="submit" value="Buscar" />
+            </form>
+        </aside>
+
+        <div class="clear"></div>
+
+        <footer>
+            Nicolas Pupelis // 2023
+        </footer>
+
+        <script>
+            function validarBusqueda() {
+                var inputBusqueda = document.querySelector('input[name="q"]');
+                var query = inputBusqueda.value.toLowerCase();
+        
+                if (query === "home" || query === "donde estudio" || query === "mas de mi") {
+                    // Redirigir a la página correspondiente
+                    window.location.href = query.replace(/ /g, "_") + ".html"; // Reemplazar espacios con guiones bajos y agregar extensión .html
+                    return false; // Cancelar la presentación del formulario, ya que hemos redirigido manualmente
+                } else {
+                    alert("Búsqueda no permitida. Por favor, intenta nuevamente.");
+                    return false;
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>
